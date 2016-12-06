@@ -1,0 +1,16 @@
+{
+  "name": "nobot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "hacker-news-api": "^2.0.0",
+    "handlebars": "^4.0.6",
+    "jsonwebtoken": "^7.1.9"
+  }
+}

@@ -1,0 +1,42 @@
+<div class="content pure-u-1 pure-u-md-3-4">
+
+<script>
+    function submit(id) {
+        var form = document.getElementById('form');
+        var input = document.createElement("input");
+        form.appendChild(input);
+        input.setAttribute("type", "hidden");
+        input.setAttribute("name", "id");
+        input.setAttribute("value", id);
+        form.submit();
+        return false;
+    }
+</script>
+    <div class="posts">
+        <h1 class="content-subhead">Security News</h1>
+
+        <form id="form" class="pure-form" action="/user/news" method="post">
+            {{#each hits}}
+            <section class="post">
+                <header class="post-header">
+                    <a href="#" onclick="submit({{objectID}})">
+                        <img src="/public/img/link.png" width="20px">
+                    </a>
+                    <a class="post-title" href="{{url}}">{{title}}</a>
+
+                    <p class="post-meta">
+                        By <b class="post-author">{{author}}</b> under
+                        {{#each _tags}}
+                            <span class="post-category post-category-js">{{.}}</span>
+                        {{/each}}
+
+                    </p>
+                </header>
+                <div class="post-description">
+                    <p>{{{story_text}}}</p>
+                </div>
+            </section>
+            {{/each}}
+        </form>
+    </div>
+</div>

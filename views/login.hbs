@@ -1,0 +1,29 @@
+<div class="content pure-u-1 pure-u-md-3-4">
+    <div class="posts">
+        <h1 class="content-subhead">Login</h1>
+
+        <section class="post">
+            <header class="post-header">
+                <h2 class="post-title">Welcome back!</h2>
+            </header>
+
+            <div class="post-description">
+
+                <form class="pure-form" action="/login" method="post">
+                    <fieldset>
+                        <legend>Please insert your credential.</legend>
+
+                        <input type="email" placeholder="Email" name="email">
+                        <input type="password" placeholder="Password" name="password">
+
+                        <button type="submit" class="pure-button pure-button-primary">Sign in</button>
+                        <br><br>
+                        {{#if showFailMessage}}
+                            <div class="warning">Login failed, please try again.</div>
+                        {{/if}}
+                    </fieldset>
+                </form>
+            </div>
+        </section>
+    </div>
+</div>
