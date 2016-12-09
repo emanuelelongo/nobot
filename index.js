@@ -6,6 +6,7 @@ let handlebars    = require('handlebars');
 let exphbs        = require('express-handlebars');
 let controllers   = require('./controllers');
 let Authenticator = require('./app/auth');
+let challenge     = require('./app/challenge/jsDomChallenge');
 
 let authenticator = new Authenticator("keep this secret");
 let app = express();
@@ -17,6 +18,8 @@ app.use(cookieParser());
 app.use('*', authenticator.helper());
 app.use('/user', authenticator.check());
 app.use('/public', express.static(__dirname + '/public'));
+app.use(challenge.challenge());
+app.use(challenge.check());
 app.engine('hbs', exphbs({defaultLayout: 'main.hbs'}));
 app.set('view engine', 'hbs');
 
