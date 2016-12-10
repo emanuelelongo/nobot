@@ -3,7 +3,7 @@ const SECRET = '___secret___';
 
 class IpToken {
     constructor(ip) {
-        this.token = jwt.sign({ip: ip}, SECRET, {audience: "challenge", expiresIn: 10});
+        this.token = jwt.sign({ip: ip}, SECRET, {audience: "challenge", expiresIn: 100});
     }
 
     get value(){
